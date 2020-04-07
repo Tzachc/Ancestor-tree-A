@@ -23,8 +23,8 @@ namespace family{
         {
             root = NULL;
         }
-        Tree addFather(string rootName, string name2);
-        Tree addMother(string rootName, string name2);
+        Tree& addFather(string rootName, string name2);
+        Tree& addMother(string rootName, string name2);
         void display();
         std::string relation(string name);
         std::string find(string name);
