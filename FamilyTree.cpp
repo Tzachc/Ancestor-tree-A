@@ -1,32 +1,29 @@
 //
-// Created by Tzach on 03/04/2020.
+// Created by Tzach on 07/04/2020.
 //
 #include "FamilyTree.hpp"
 using namespace std;
 namespace family {
-    Node::Node(string name)
-    {
-        this->name = name;
-        father=mother=NULL;
-    }
     Tree::Tree(string name)
     {
-        Node x(name);
-        this->root = &x;
-    }
-    family::Tree family::Tree::addFather(string rootName, string name2)
-    {
-        return Tree("");
+        root=new Node;
+        root->name=name;
+        root->father=NULL;
+        root->mother=NULL;
     };
-    family::Tree family::Tree::addMother(string rootName, string name2)
+    Tree&Tree::addFather(string rootName, string name2)
     {
-        return Tree("");
+        return *this;
+    };
+    Tree&Tree::addMother(string rootName, string name2)
+    {
+        return *this;
     };
     void family::Tree::display()
     {
         if (root == NULL)
             return;
-        cout<<root->name.length()<<endl;
+        cout<<root->name<<endl;
     };
     string family::Tree::relation(string name)
     {
