@@ -1,5 +1,5 @@
 //
-// Created by tzach on 03/04/2020.
+// Created by Tzach on 07/04/2020.
 //
 #pragma once
 #include <iostream>
@@ -14,12 +14,15 @@ namespace family{
         string name;
         Node* father;
         Node* mother;
-        Node(string name);
     };
-     class Tree{
-         Node* root;
-     public:
-         Tree(string name);
+    class Tree{
+        Node* root;
+    public:
+        Tree(string name);
+        Tree()
+        {
+            root = NULL;
+        }
         Tree addFather(string rootName, string name2);
         Tree addMother(string rootName, string name2);
         void display();
