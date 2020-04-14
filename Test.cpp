@@ -46,6 +46,24 @@ TEST_CASE("correlation Test")
             CHECK(Arborvitae.relation("Thomas") == "great-great-grandfather");
             CHECK(Arborvitae.relation("Charles") == "great-great-great-grandfather");
             CHECK(Arborvitae.relation("Christopher") == "great-great-great-great-grandfather");
+            CHECK(Arborvitae.relation("James") == "me");
+            CHECK(Arborvitae.relation("John") == "father");
+            CHECK(Arborvitae.relation("Mary") == "mother");
+            CHECK(Arborvitae.relation("Robert") == "grandfather");
+            CHECK(Arborvitae.relation("Michael") == "grandfather");
+            CHECK(Arborvitae.relation("Patricia") == "grandmother");
+            CHECK(Arborvitae.relation("Jennifer") == "grandmother");
+            CHECK(Arborvitae.relation("William   ") == "great-grandfather");
+            CHECK(Arborvitae.relation("David") == "great-grandfather");
+            CHECK(Arborvitae.relation("Richard") == "great-grandfather");
+            CHECK(Arborvitae.relation("Joseph") == "great-grandfather");
+            CHECK(Arborvitae.relation("Simona") == "great-grandmother");
+            CHECK(Arborvitae.relation("Elizabeth") == "great-grandmother");
+            CHECK(Arborvitae.relation("Barbara") == "great-grandmother");
+            CHECK(Arborvitae.relation("Susan") == "great-grandmother");
+            CHECK(Arborvitae.relation("Thomas") == "great-great-grandfather");
+            CHECK(Arborvitae.relation("Charles") == "great-great-great-grandfather");
+            CHECK(Arborvitae.relation("Christopher") == "great-great-great-great-grandfather");
 
 
     Tree BlackAsh("Daniel");
