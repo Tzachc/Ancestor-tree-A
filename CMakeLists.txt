@@ -3,4 +3,4 @@ project(untitled2)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(untitled2 FamilyTree.hpp FamilyTree.cpp main.cpp)
+add_executable(untitled2 FamilyTree.hpp FamilyTree.cpp Demo.cpp Test.cpp)
