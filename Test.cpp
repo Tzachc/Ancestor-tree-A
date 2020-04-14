@@ -11,60 +11,40 @@ using namespace std;
 TEST_CASE("correlation Test")
 {
     Tree Arborvitae("James");
-    Arborvitae.addFather("James", "John")
-            .addMother("James", "Mary")
-            .addFather("John", "Robert")
-            .addMother("John", "Patricia")
-            .addFather("Mary", "Michael")
-            .addMother("Mary", "Jennifer")
-            .addFather("Robert", "William")
-            .addMother("Robert", "Linda")
-            .addFather("Patricia", "David")
-            .addMother("Patricia", "Elizabeth")
-            .addFather("Michael", "Richard")
-            .addMother("Michael", "Barbara")
-            .addFather("Jennifer", "Joseph")
-            .addMother("Jennifer", "Susan")
-            .addFather("William", "Thomas")
-            .addFather("William", "Charles")
-            .addFather("Gabriel", "Christopher");
-            CHECK(Arborvitae.relation("James") == "me");
-            CHECK(Arborvitae.relation("John") == "father");
-            CHECK(Arborvitae.relation("Mary") == "mother");
-            CHECK(Arborvitae.relation("Robert") == "grandfather");
-            CHECK(Arborvitae.relation("Michael") == "grandfather");
-            CHECK(Arborvitae.relation("Patricia") == "grandmother");
-            CHECK(Arborvitae.relation("Jennifer") == "grandmother");
-            CHECK(Arborvitae.relation("William   ") == "great-grandfather");
-            CHECK(Arborvitae.relation("David") == "great-grandfather");
-            CHECK(Arborvitae.relation("Richard") == "great-grandfather");
-            CHECK(Arborvitae.relation("Joseph") == "great-grandfather");
-            CHECK(Arborvitae.relation("Simona") == "great-grandmother");
-            CHECK(Arborvitae.relation("Elizabeth") == "great-grandmother");
-            CHECK(Arborvitae.relation("Barbara") == "great-grandmother");
-            CHECK(Arborvitae.relation("Susan") == "great-grandmother");
-            CHECK(Arborvitae.relation("Thomas") == "great-great-grandfather");
-            CHECK(Arborvitae.relation("Charles") == "great-great-great-grandfather");
-            CHECK(Arborvitae.relation("Christopher") == "great-great-great-great-grandfather");
-            CHECK(Arborvitae.relation("James") == "me");
-            CHECK(Arborvitae.relation("John") == "father");
-            CHECK(Arborvitae.relation("Mary") == "mother");
-            CHECK(Arborvitae.relation("Robert") == "grandfather");
-            CHECK(Arborvitae.relation("Michael") == "grandfather");
-            CHECK(Arborvitae.relation("Patricia") == "grandmother");
-            CHECK(Arborvitae.relation("Jennifer") == "grandmother");
-            CHECK(Arborvitae.relation("William   ") == "great-grandfather");
-            CHECK(Arborvitae.relation("David") == "great-grandfather");
-            CHECK(Arborvitae.relation("Richard") == "great-grandfather");
-            CHECK(Arborvitae.relation("Joseph") == "great-grandfather");
-            CHECK(Arborvitae.relation("Simona") == "great-grandmother");
-            CHECK(Arborvitae.relation("Elizabeth") == "great-grandmother");
-            CHECK(Arborvitae.relation("Barbara") == "great-grandmother");
-            CHECK(Arborvitae.relation("Susan") == "great-grandmother");
-            CHECK(Arborvitae.relation("Thomas") == "great-great-grandfather");
-            CHECK(Arborvitae.relation("Charles") == "great-great-great-grandfather");
-            CHECK(Arborvitae.relation("Christopher") == "great-great-great-great-grandfather");
+    Arborvitae.addFather("James", "John");
+    Arborvitae.addMother("James", "Mary");
+    Arborvitae.addFather("John", "Robert");
+    Arborvitae.addMother("John", "Patricia");
+    Arborvitae.addFather("Mary", "Michael");
+    Arborvitae.addMother("Mary", "Jennifer");
+    Arborvitae.addFather("Robert", "William");
+    Arborvitae.addMother("Robert", "Linda");
+    Arborvitae.addFather("Patricia", "David");
+    Arborvitae.addMother("Patricia", "Elizabeth");
+    Arborvitae.addFather("Michael", "Richard");
+    Arborvitae.addMother("Michael", "Barbara");
+    Arborvitae.addFather("Jennifer", "Joseph");
+    Arborvitae.addMother("Jennifer", "Susan");
+    Arborvitae.addFather("William", "Thomas");
 
+            CHECK(Arborvitae.relation("James") == "me");
+            CHECK(Arborvitae.relation("John") == "father");
+            CHECK(Arborvitae.relation("Mary") == "mother");
+            CHECK(Arborvitae.relation("Robert") == "grandfather");
+            CHECK(Arborvitae.relation("Michael") == "grandfather");
+            CHECK(Arborvitae.relation("Patricia") == "grandmother");
+            CHECK(Arborvitae.relation("Jennifer") == "grandmother");
+            CHECK(Arborvitae.relation("William   ") == "great-grandfather");
+            CHECK(Arborvitae.relation("David") == "great-grandfather");
+            CHECK(Arborvitae.relation("Richard") == "great-grandfather");
+            CHECK(Arborvitae.relation("Joseph") == "great-grandfather");
+            CHECK(Arborvitae.relation("Simona") == "great-grandmother");
+            CHECK(Arborvitae.relation("Elizabeth") == "great-grandmother");
+            CHECK(Arborvitae.relation("Barbara") == "great-grandmother");
+            CHECK(Arborvitae.relation("Susan") == "great-grandmother");
+            CHECK(Arborvitae.relation("Thomas") == "great-great-grandfather");
+            CHECK(Arborvitae.relation("Charles") == "great-great-great-grandfather");
+            CHECK(Arborvitae.relation("Christopher") == "great-great-great-great-grandfather");
 
     Tree BlackAsh("Daniel");
     BlackAsh.addMother("Daniel", "Lisa")
@@ -73,42 +53,6 @@ TEST_CASE("correlation Test")
             .addFather("Dorothy", "Anthony")
             .addMother("Anthony", "Sandra");
             CHECK(BlackAsh.relation("Daniel") == "me");
-            CHECK(BlackAsh.relation("Lisa") == "mother");
-            CHECK(BlackAsh.relation("Matthew") == "grandfather");
-            CHECK(BlackAsh.relation("Dorothy") == "great-grandmother");
-            CHECK(BlackAsh.relation("Anthony") == "great-great-grandfather");
-            CHECK(BlackAsh.relation("Sandra") == "great-great-great-grandmother");
-     CHECK(BlackAsh.relation("Daniel") == "me");
-            CHECK(BlackAsh.relation("Lisa") == "mother");
-            CHECK(BlackAsh.relation("Matthew") == "grandfather");
-            CHECK(BlackAsh.relation("Dorothy") == "great-grandmother");
-            CHECK(BlackAsh.relation("Anthony") == "great-great-grandfather");
-            CHECK(BlackAsh.relation("Sandra") == "great-great-great-grandmother"); CHECK(BlackAsh.relation("Daniel") == "me");
-            CHECK(BlackAsh.relation("Lisa") == "mother");
-            CHECK(BlackAsh.relation("Matthew") == "grandfather");
-            CHECK(BlackAsh.relation("Dorothy") == "great-grandmother");
-            CHECK(BlackAsh.relation("Anthony") == "great-great-grandfather");
-            CHECK(BlackAsh.relation("Sandra") == "great-great-great-grandmother"); CHECK(BlackAsh.relation("Daniel") == "me");
-            CHECK(BlackAsh.relation("Lisa") == "mother");
-            CHECK(BlackAsh.relation("Matthew") == "grandfather");
-            CHECK(BlackAsh.relation("Dorothy") == "great-grandmother");
-            CHECK(BlackAsh.relation("Anthony") == "great-great-grandfather");
-            CHECK(BlackAsh.relation("Sandra") == "great-great-great-grandmother"); CHECK(BlackAsh.relation("Daniel") == "me");
-            CHECK(BlackAsh.relation("Lisa") == "mother");
-            CHECK(BlackAsh.relation("Matthew") == "grandfather");
-            CHECK(BlackAsh.relation("Dorothy") == "great-grandmother");
-            CHECK(BlackAsh.relation("Anthony") == "great-great-grandfather");
-            CHECK(BlackAsh.relation("Sandra") == "great-great-great-grandmother"); CHECK(BlackAsh.relation("Daniel") == "me");
-            CHECK(BlackAsh.relation("Lisa") == "mother");
-            CHECK(BlackAsh.relation("Matthew") == "grandfather");
-            CHECK(BlackAsh.relation("Dorothy") == "great-grandmother");
-            CHECK(BlackAsh.relation("Anthony") == "great-great-grandfather");
-            CHECK(BlackAsh.relation("Sandra") == "great-great-great-grandmother"); CHECK(BlackAsh.relation("Daniel") == "me");
-            CHECK(BlackAsh.relation("Lisa") == "mother");
-            CHECK(BlackAsh.relation("Matthew") == "grandfather");
-            CHECK(BlackAsh.relation("Dorothy") == "great-grandmother");
-            CHECK(BlackAsh.relation("Anthony") == "great-great-grandfather");
-            CHECK(BlackAsh.relation("Sandra") == "great-great-great-grandmother"); CHECK(BlackAsh.relation("Daniel") == "me");
             CHECK(BlackAsh.relation("Lisa") == "mother");
             CHECK(BlackAsh.relation("Matthew") == "grandfather");
             CHECK(BlackAsh.relation("Dorothy") == "great-grandmother");
@@ -129,7 +73,6 @@ TEST_CASE("correlation Test")
             .addFather("Ryan", "Jacob")
             .addFather("Jacob", "Gary")
             .addFather("Gary", "Nicholas");
-
             SUBCASE("relation Test")
     {
                 CHECK(Basswood.relation("Kenneth") == "me");
@@ -149,7 +92,6 @@ TEST_CASE("correlation Test")
     }
 }
 
-
 TEST_CASE("irregularity behavior Test") // execptions throwing
 {
     Tree Cherry("Wayne");
@@ -168,9 +110,7 @@ TEST_CASE("irregularity behavior Test") // execptions throwing
             .addFather("Marilyn", "Johnny")
             .addMother("Marilyn", "Diana")
             .addFather("Vincent", "Bradley")
-            .addFather("Vincent", "Ramy")
-            .addFather("Vincent", "Meo")
-            .addFather("Vincent", "Yarim");
+            .addFather("Vincent", "Ramy");
 
             SUBCASE("addFather&addMother functions Test")
     {
@@ -239,10 +179,7 @@ TEST_CASE("remove nodes Test")
             .addMother("Russell", "Rose")
             .addFather("Marilyn", "Johnny")
             .addMother("Marilyn", "Diana")
-            .addFather("Vincent", "Bradley")
-            .addFather("Vincent", "Ramy")
-            .addFather("Vincent", "Meo")
-            .addFather("Vincent", "Yarim");
+            .addFather("Vincent", "Bradley");
     Oak.remove("Yarim");
             CHECK(Oak.relation("Yarim") == "unrelated");
     Oak.remove("Denise");
@@ -290,7 +227,6 @@ TEST_CASE("remove nodes Test")
 TEST_CASE("addFather function Test")
 {
     Tree Apple("drake");
-    Apple.addFather("drake", "Maxim");
     Apple.addFather("drake", "guliver");
     Apple.addFather("guliver", "Sami");
     Apple.addFather("Sami", "roni");
@@ -304,7 +240,6 @@ TEST_CASE("addFather function Test")
     }
 
     Apple.addMother("drake", "Noa");
-    Apple.addMother("drake", "Lily");
 
             SUBCASE("addMother Test")
     {
