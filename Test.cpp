@@ -262,10 +262,7 @@ TEST_CASE("addFather function Test")
             .addMother("Russell", "Rose")
             .addFather("Marilyn", "Johnny")
             .addMother("Marilyn", "Diana")
-            .addFather("Vincent", "Bradley")
-            .addFather("Vincent", "Ramy")
-            .addFather("Vincent", "Meo")
-            .addFather("Vincent", "Yarim");
+            .addFather("Vincent", "Bradley");
 
             SUBCASE("big family tree Test")
     {
