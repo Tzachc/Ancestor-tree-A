@@ -5,7 +5,6 @@
 #define COUNT 10
 using namespace std;
 using namespace family;
-int minDepth(Node *root);
 
 Node::Node()
 {
