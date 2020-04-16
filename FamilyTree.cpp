@@ -12,7 +12,7 @@ Node::Node()
     this->name = "";
     this->father = nullptr;
     this->mother = nullptr;
-    this->height=NULL;
+    this->height=0;
     this->parent_type = "me";
     this->relation = "";
 }
@@ -20,7 +20,7 @@ Node::Node(string name)
 {
     this->name = name;
     father=mother=NULL;
-    height = NULL;
+    height = 0;
     parent_type = "unknown";
     relation = "";
 }
