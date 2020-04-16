@@ -108,7 +108,7 @@ string Tree::relation(string who) {
     Node* curr=findPos(this->root,who);
     string ans;
     if(curr==NULL)
-        return "unrealated";
+        return "unrelated";
     if(curr==this->getRoot()) return "me";
     for (int i = 2; i < curr->getHeight(); ++i)
         ans+="great-";
