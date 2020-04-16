@@ -1,5 +1,5 @@
 //
-// Created by Tzach on 07/04/2020.
+// Created by tzach on 03/04/2020.
 //
 #pragma once
 #include <iostream>
@@ -14,10 +14,35 @@ namespace family{
         string name;
         Node* father;
         Node* mother;
-        int depth;
+        int height;
         string parent_type;
+        string relation;
         Node(string name);
         Node();
+        void setRelation(string relation)
+        {
+            this->relation = relation;
+        }
+        string getRelation()
+        {
+            return this->relation;
+        }
+        void setHeight(int h)
+        {
+            this->height=h;
+        };
+        int getHeight()
+        {
+            return this->height;
+        }
+        string getParentType()
+        {
+            return this->parent_type;
+        };
+        void setParentType(string type)
+        {
+            this->parent_type=type;
+        };
     };
     class Tree{
     public:
@@ -31,10 +56,11 @@ namespace family{
         std::string find(string name);
         void remove(string name);
         Node * findPos(Node *currentN, string name);
+        Node* findPosByType(Node* currentN, string name);
         void print2DUtil(Node *root, int space);
+        Node* getRoot(){ return this->root;}
 
     };
 
 }
-
 
