@@ -171,3 +171,7 @@ string family::Tree::find(string type)
     if(curr==nullptr) throw std::out_of_range("The tree cannot handle the 'uncle' relation");
     return curr->name;
 };
+void Tree::remove(string person_name)
+{
+
+}
