@@ -5,13 +5,12 @@
 #define COUNT 10
 using namespace std;
 using namespace family;
-
 Node::Node()
 {
     this->name = "";
     this->father = nullptr;
     this->mother = nullptr;
-    this->height=0;
+    this->height= 0;
     this->parent_type = "me";
     this->relation = "";
 }
