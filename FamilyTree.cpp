@@ -207,7 +207,6 @@ void Tree::remove(string person_name)
     if (PersonToRemove == nullptr)
         cout << "tree successfully deleted!";
 }
-
 void Tree::deleteSubTree(Node *&node) {
     if (node == nullptr) {
         return;
