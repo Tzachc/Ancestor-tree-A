@@ -14,6 +14,7 @@ namespace family{
         string name;
         Node* father;
         Node* mother;
+        Node *child;
         int height;
         string parent_type;
         string relation;
@@ -59,7 +60,8 @@ namespace family{
         Node* findPosByType(Node* currentN, string name);
         void print2DUtil(Node *root, int space);
         Node* getRoot(){ return this->root;}
-
+        void deleteSubTree(Node *&node);
+        ~Tree();
     };
 
 }
