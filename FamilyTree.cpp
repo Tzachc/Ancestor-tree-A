@@ -10,6 +10,7 @@ Node::Node()
     this->name = "";
     this->father = nullptr;
     this->mother = nullptr;
+    this->child = nullptr;
     this->height= 0;
     this->parent_type = "me";
     this->relation = "";
@@ -18,6 +19,7 @@ Node::Node(string name)
 {
     this->name = name;
     father=mother=NULL;
+    child = NULL;
     height = 0;
     parent_type = "unknown";
     relation = "";
@@ -28,10 +30,19 @@ Tree::Tree(string name)
     root->name = name;
     root->father= nullptr;
     root->mother = nullptr;
+    root->child = nullptr;
     root->setHeight(0);
     root->parent_type = "me";
     root->setRelation(relation(name));
 }
+Tree::~Tree() {
+    deleteSubTree(root->father);
+    deleteSubTree(root->mother);
+    //Only then delete the root itself
+    delete root;
+    root = nullptr;
+}
+
 /* take Node and name to search for */
 /*  */
 Node* Tree::findPos(Node* currentN, string name)
@@ -59,6 +70,10 @@ Tree& Tree::addFather(string rootName, string newName)
             curr->father->setParentType("father");
             curr->father->setHeight(curr->getHeight()+1);
             curr->father->setRelation(relation(newName));
+            if(curr->father!= nullptr)
+            curr->father->child = curr;
+            if(curr->mother!= nullptr)
+            curr->mother->child = curr;
         }
         else
         {
@@ -84,6 +99,8 @@ Tree& Tree::addMother(string rootName, string newName)
             curr->mother->setParentType("mother");
             curr->mother->setHeight(curr->getHeight()+1);
             curr->mother->setRelation(relation(newName));
+            curr->father->child = curr;
+            curr->mother->child = curr;
         }
         else
         {
@@ -172,5 +189,35 @@ string family::Tree::find(string type)
 };
 void Tree::remove(string person_name)
 {
+    Node* PersonToRemove = findPos(this->root,person_name);
+    if (PersonToRemove == nullptr)
+        throw runtime_error("The person doesn't exist in tree");
+    if (PersonToRemove == root)
+        throw runtime_error("Can't remove myself, the root of the tree");
+    if(PersonToRemove == PersonToRemove->child->father)
+    {
+        PersonToRemove->child->father = nullptr;
+    }
+    else
+        {
+            PersonToRemove->child->mother = nullptr;
+        }
+    deleteSubTree(PersonToRemove);
+    //deleteSubTree(&PersonToRemove);
+    if (PersonToRemove == nullptr)
+        cout << "tree successfully deleted!";
+}
 
+void Tree::deleteSubTree(Node *&node) {
+    if (node == nullptr) {
+        return;
+    }
+
+    deleteSubTree(node->father);
+    deleteSubTree(node->mother);
+    node->father = nullptr;
+    node->mother = nullptr;
+    node->child = nullptr;
+    delete node;
+    node = nullptr;//We don't want a dangling pointer
 }
